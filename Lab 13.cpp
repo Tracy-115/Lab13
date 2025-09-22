@@ -3,13 +3,13 @@
 
 #include <iostream>
 #include <fstream>
-#include <vectors>
+#include <vector>
 #include <algorithm>
 #include <numeric>
 using namespace std;
 
 int main(){
-vector <int> numbers;
+vector <int> numbers; //creating a vector of integers
 ifstream infile("Vectors.txt");//reads the file
 if (!infile){
   cerr << "Error" << endl;//error message for when the file is not found
@@ -17,9 +17,8 @@ if (!infile){
 
 int nums;
   while (infile >> nums){
-    numbers.push_back(nums);
+    numbers.push_back(nums);//to add in vectors we use push_back,pushes numbers into vectors
   }
-  infile.close()
 infile.close();
 cout << "This is a gathered data for Grades of the 30 students in the school" << endl;
 cout << "With gathered numbers, we will find the Max, Min, and Mean numbers!" << endl;
