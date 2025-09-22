@@ -3,21 +3,23 @@
 
 #include <iostream>
 #include <fstream>
-#include <array>
+#include <vectors>
 #include <algorithm>
 #include <numeric>
 using namespace std;
 
 int main(){
-array<int, 30>numbers{};//array of 30 integers
-ifstream infile("Array_File.txt");//reads the file
+vector <int> numbers;
+ifstream infile("Vectors.txt");//reads the file
 if (!infile){
   cerr << "Error" << endl;//error message for when the file is not found
 }
 
-for (int i =0; i<30 ; i++){
-  infile >> numbers[i];//reads the numbers from the file
-}
+int nums;
+  while (infile >> nums){
+    numbers.push_back(nums);
+  }
+  infile.close()
 infile.close();
 cout << "This is a gathered data for Grades of the 30 students in the school" << endl;
 cout << "With gathered numbers, we will find the Max, Min, and Mean numbers!" << endl;
